@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Paltech UI Checker",
+  "version": "1.0",
+  "description": "Check alignment, find broken images, and detect spelling errors on web pages",
+  "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/contentScript.js"],
+      "css": ["src/css/styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/css/styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

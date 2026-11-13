@@ -1,0 +1,806 @@
+/* Element highlight styles */
+.alignment-checker-high {
+  outline: 2px dashed #ef4444 !important;
+  outline-offset: 2px !important;
+}
+
+/* Protect radio buttons specifically */
+input[type="radio"] {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
+  z-index: auto !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Radio button containers */
+label:has(> input[type="radio"]),
+div:has(> input[type="radio"]),
+fieldset:has(> input[type="radio"]) {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.alignment-checker-medium {
+  outline: 2px dashed #f97316 !important;
+  outline-offset: 2px !important;
+}
+
+.alignment-checker-low {
+  outline: 2px dashed #eab308 !important;
+  outline-offset: 2px !important;
+}
+
+/* Broken image highlighting - more visible with badge */
+.alignment-checker-broken-image {
+  outline: 2px dashed #ef4444 !important;
+  outline-offset: 2px !important;
+  position: relative !important;
+}
+
+/* Add a clearly visible badge in the corner */
+.alignment-checker-broken-image::before {
+  content: "✕" !important; /* X symbol */
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  background-color: #ef4444 !important; /* Red background */
+  color: white !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  padding: 2px 6px !important;
+  border-radius: 0 0 0 4px !important; /* Rounded only on bottom-left corner */
+  z-index: 9999 !important;
+  pointer-events: none !important;
+}
+
+/* Tooltip styling */
+.alignment-tooltip {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 280px;
+  z-index: 1000000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip-header {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tooltip-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tooltip-reasons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #475569;
+}
+
+.tooltip-reason {
+  padding: 4px 0;
+  display: flex;
+  align-items: start;
+  gap: 6px;
+}
+
+/* Popup styles */
+.alignment-checker-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 360px; /* Reduced from 380px for more compact display */
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  color: #334155;
+  display: none;
+}
+
+.alignment-checker-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px; /* Further reduced padding */
+  border-bottom: 1px solid #e2e8f0;
+  cursor: grab;
+  border-radius: 8px 8px 0 0;
+  background: #f8fafc;
+}
+
+.alignment-checker-popup-header h1 {
+  font-size: 18px;
+  color: #2563eb;
+  margin: 0;
+}
+
+.alignment-checker-popup-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #64748b;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.alignment-checker-popup-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #334155;
+}
+
+.alignment-checker-popup-content {
+  padding: 12px 16px; /* Reduced padding for a more compact content area */
+}
+
+.alignment-checker-status {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 12px; /* Further reduced margin */
+  min-height: 22px;
+}
+
+.alignment-checker-status-scanning {
+  color: #2563eb;
+}
+
+.alignment-checker-status-success {
+  color: #22c55e;
+}
+
+.alignment-checker-status-warning {
+  color: #eab308;
+}
+
+.alignment-checker-status-error {
+  color: #ef4444;
+}
+
+.alignment-checker-issue-counts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px; /* Reduced gap for more compact layout */
+  margin: 18px 0; /* Reduced margin */
+}
+
+.alignment-checker-issue-count {
+  text-align: center;
+  padding: 12px; /* Increased padding */
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+}
+
+.alignment-checker-count-high {
+  color: #ef4444;
+}
+
+.alignment-checker-count-medium {
+  color: #f97316;
+}
+
+.alignment-checker-count-low {
+  color: #eab308;
+}
+
+.alignment-checker-count-number {
+  font-size: 20px; /* Slightly larger */
+  font-weight: 600;
+  margin-top: 6px; /* Increased margin */
+}
+
+.alignment-checker-severity-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px; /* Increased margin */
+  gap: 10px; /* Added gap */
+}
+
+.alignment-checker-severity-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 16px; /* Increased padding */
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  border: 1px solid #e2e8f0;
+  flex: 1; /* Make them expand equally */
+  justify-content: center; /* Center content */
+}
+
+.alignment-checker-severity-radio:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.alignment-checker-severity-radio input {
+  margin-right: 6px;
+}
+
+.alignment-checker-severity-high {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.alignment-checker-severity-medium {
+  color: #f97316;
+  font-weight: 500;
+}
+
+.alignment-checker-severity-low {
+  color: #eab308;
+  font-weight: 500;
+}
+
+.alignment-checker-buttons {
+  display: flex;
+  gap: 16px; /* Increased gap */
+  margin-top: 24px; /* Added margin-top */
+}
+
+.alignment-checker-buttons button {
+  flex: 1;
+  background-color: #2563eb;
+  border: none;
+  color: white;
+  padding: 12px 16px; /* Increased padding */
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.alignment-checker-buttons button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.alignment-checker-buttons button:active {
+  transform: translateY(1px);
+}
+
+.alignment-checker-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 16px; /* Reduced margin */
+  padding-top: 12px; /* Reduced padding */
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Broken images count */
+.alignment-checker-broken-images {
+  text-align: center;
+  padding: 16px; /* Increased padding */
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  margin: 24px 0; /* Increased margin and added consistent spacing */
+}
+
+.alignment-checker-broken-label {
+  font-weight: 500;
+  font-size: 16px; /* Slightly larger */
+}
+
+.alignment-checker-broken-count {
+  font-size: 24px; /* Larger for emphasis */
+  font-weight: 600;
+  margin-top: 8px; /* Increased margin */
+  margin-bottom: 4px; /* Added margin-bottom */
+}
+
+/* Extra buttons */
+.alignment-checker-extra-buttons {
+  display: none;
+}
+
+/* Tabs styling */
+.alignment-checker-tabs {
+  display: flex;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 12px; /* Further reduced margin */
+}
+
+.alignment-checker-tab {
+  padding: 6px 12px; /* Further reduced padding to make tabs more compact */
+  cursor: pointer;
+  font-weight: 500;
+  color: #64748b;
+  position: relative;
+  text-align: center;
+  flex: 1;
+}
+
+.alignment-checker-tab:hover {
+  color: #2563eb;
+  background-color: #f8fafc;
+}
+
+.alignment-checker-tab.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.alignment-checker-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2563eb;
+}
+
+.alignment-checker-tab-content {
+  display: block;
+  padding: 4px; /* Subtle padding */
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Broken image check button styles */
+.alignment-checker-check-images {
+  width: 100%;
+  background-color: #2563eb;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  color: white;
+}
+
+.alignment-checker-check-images:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+#alignment-checker-clear-images {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  background-color: #64748b;
+  color: white;
+}
+
+#alignment-checker-clear-images:hover {
+  background-color: #475569;
+  transform: translateY(-1px);
+}
+
+/* Scanning animation */
+.alignment-checker-check-images.scanning {
+  background-color: #2563eb !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.alignment-checker-check-images.scanning::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: scanning-animation 1.5s infinite;
+}
+
+@keyframes scanning-animation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Error icon animation */
+.broken-image-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Scanning button animation */
+.alignment-checker-check-images.scanning {
+  background-color: #2563eb !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.alignment-checker-check-images.scanning::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: scanning-animation 1.5s infinite;
+}
+
+/* Theme toggle button */
+.alignment-checker-theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  color: #64748b;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.alignment-checker-theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #334155;
+}
+
+.alignment-checker-header-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Dark mode styles */
+.alignment-checker-popup.dark-mode {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-popup-header {
+  background: #0f172a;
+  border-bottom-color: #334155;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-popup-header h1 {
+  color: #3b82f6;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-popup-close,
+.alignment-checker-popup.dark-mode .alignment-checker-theme-toggle {
+  color: #94a3b8;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-popup-close:hover,
+.alignment-checker-popup.dark-mode .alignment-checker-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-issue-count,
+.alignment-checker-popup.dark-mode .alignment-checker-broken-images,
+.alignment-checker-popup.dark-mode .alignment-checker-severity-radio {
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-status-scanning {
+  color: #3b82f6;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-status-success {
+  color: #10b981;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-status-warning {
+  color: #f59e0b;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-status-error {
+  color: #ef4444;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-severity-radio:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-tab {
+  color: #94a3b8;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-tab:hover {
+  background-color: #0f172a;
+  color: #3b82f6;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-tab.active {
+  color: #3b82f6;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-footer {
+  border-top-color: #334155;
+  color: #64748b;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-tabs {
+  border-bottom-color: #334155;
+  background-color: #0f172a;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-buttons button {
+  background-color: #3b82f6;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-buttons button:hover {
+  background-color: #2563eb;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-check-images {
+  background-color: #3b82f6;
+}
+
+.alignment-checker-popup.dark-mode .alignment-checker-check-images:hover {
+  background-color: #2563eb;
+}
+
+.alignment-checker-popup.dark-mode #alignment-checker-clear-images {
+  background-color: #475569;
+}
+
+.alignment-checker-popup.dark-mode #alignment-checker-clear-images:hover {
+  background-color: #334155;
+}
+
+/* Highlight for misspelled words */
+.spell-check-misspelled {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  text-decoration: underline wavy #ef4444 !important;
+  cursor: pointer !important;
+  display: inline !important; /* Use inline instead of inline-block to maintain flow */
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  vertical-align: baseline !important;
+}
+
+/* Add a hover effect for better UX without affecting positioning */
+.spell-check-misspelled:hover {
+  background-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Spell Checker Tab Styles */
+.spell-checker-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0; /* Reduced padding */
+  font-size: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 8px; /* Reduced margin */
+}
+
+.spell-checker-status-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.spell-checker-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.spell-checker-red-dot {
+  background-color: #ef4444;
+}
+
+.spell-checker-dictionary-info {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.spell-checker-word-list-header {
+  display: flex;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #64748b;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.spell-checker-word-column {
+  flex: 2;
+}
+
+.spell-checker-count-column {
+  flex: 1;
+  text-align: center;
+}
+
+.spell-checker-actions-column {
+  flex: 1;
+  text-align: right;
+}
+
+.spell-checker-word-list-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 140px;
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.spell-checker-word-item {
+  display: flex;
+  padding: 8px 0; /* Reduced padding */
+  border-bottom: 1px solid #e2e8f0;
+  align-items: center;
+}
+
+.spell-checker-word-text {
+  flex: 2;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.spell-checker-count-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.spell-checker-word-count {
+  color: #ffffff;
+  background-color: #64748b;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.spell-checker-word-actions {
+  flex: 1;
+  text-align: right;
+}
+
+.spell-checker-ignore-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.spell-checker-ignore-btn:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode styles for spell checker */
+.alignment-checker-popup.dark-mode .spell-checker-status-bar {
+  border-color: #475569;
+}
+
+.alignment-checker-popup.dark-mode .spell-checker-word-list-header {
+  color: #cbd5e1;
+  border-color: #475569;
+}
+
+.alignment-checker-popup.dark-mode .spell-checker-word-item {
+  border-color: #475569;
+}
+
+.alignment-checker-popup.dark-mode .spell-checker-word-count {
+  background-color: #475569;
+}
+
+.alignment-checker-popup.dark-mode .spell-checker-dictionary-info {
+  color: #cbd5e1;
+}
+
+.alignment-checker-popup.dark-mode .spell-checker-ignore-btn {
+  color: #60a5fa;
+}
+
+/* Spell checker button styles */
+button#spell-checker-check,
+button#spell-checker-clear {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button#spell-checker-check {
+  background-color: #2563eb;
+  color: white;
+}
+
+button#spell-checker-check:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+button#spell-checker-clear {
+  background-color: #64748b;
+  color: white;
+}
+
+button#spell-checker-clear:hover {
+  background-color: #475569;
+  transform: translateY(-1px);
+}
